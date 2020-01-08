@@ -24,7 +24,7 @@ app.post('/', (req, res) => {
           members: [{
                email_address: email,
                status: "subscribed",
-               merge_fields: {
+               merge_fields:{
                     FNAME: firstName,
                     LNAME: lastName 
                }
@@ -59,6 +59,6 @@ app.post('/', (req, res) => {
 
 //server
 const port = 8080
-app.listen(port, () => {
+app.listen(process.env.PORT || port, () => {
      console.log(`server running on port ${port}!`)
 })
